@@ -540,7 +540,7 @@ class Zipper
     private function addDir($pathToDir)
     {
         // First go over the files in this directory and add them to the repository.
-        foreach ($this->file->files($pathToDir) as $file) {
+        foreach ($this->file->allFiles($pathToDir, true) as $file) {
             $this->addFile($pathToDir.'/'.basename($file));
         }
 
